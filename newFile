@@ -1,0 +1,42 @@
+Script started on Mon Feb 17 00:09:27 2014
+[?1034hbash-3.2$ rails c
+Loading development environment (Rails 4.0.2)
+[?1034h2.0.0-p353 :001 > def string_shuffle(s)
+2.0.0-p353 :002?>   s.split('').hf[K[Kshuffel[K[Kle.join
+2.0.0-p353 :003?>   end
+ => nil 
+2.0.0-p353 :004 > string-[K_SHU[K[K[Kshuffle()")")f")o")o")b")a")r")
+ => "rfobao" 
+2.0.0-p353 :005 > class String
+2.0.0-p353 :006?>   def shuffle
+2.0.0-p353 :007?>     self.split()')')[C.shuffle.join
+2.0.0-p353 :008?>     end
+2.0.0-p353 :009?>   end
+ => nil 
+2.0.0-p353 :010 > ""f"o"o"b"a"r"[C.shuffle
+ => "bafoor" 
+2.0.0-p353 :011 > ""f"o"o"b"a"r"[C.shuffle
+ => "arbofo" 
+2.0.0-p353 :012 > params[K[K[K[K[K[Kperson1 = { :first => "Weiyi", :last => "Li" }
+ => {:first=>"Weiyi", :last=>"Li"} 
+2.0.0-p353 :013 > person2 = {}:}[C[K[K[K[K[K[K[K[K[K[K[K[K[Kperson1 = { :first => "Weiyi", :last => "Li" }[1P[1P[C[1P[1P[1P[1@2
+ => {:first=>"Wy", :last=>"L"} 
+2.0.0-p353 :014 > person3[K[K[K[K[K[K[Kperson2 = { :first => "Wy", :last => "L" }[1@i[1@i[1@i[1@y[1@y[1@y[1P[1@3
+ => {:first=>"Wyyyy", :last=>"Liii"} 
+2.0.0-p353 :015 > params={}
+ => {} 
+2.0.0-p353 :016 > params[:father]=person1
+ => {:first=>"Weiyi", :last=>"Li"} 
+2.0.0-p353 :017 > params[:mother]=person2
+ => {:first=>"Wy", :last=>"L"} 
+2.0.0-p353 :018 > params[:child]=person3
+ => {:first=>"Wyyyy", :last=>"Liii"} 
+2.0.0-p353 :019 > params[:father][:first]
+ => "Weiyi" 
+2.0.0-p353 :020 > params[:mother][:ls[K[Kas[K[Klast]
+ => "L" 
+2.0.0-p353 :021 > exit
+bash-3.2$ ei[K[Kexit
+exit
+
+Script done on Mon Feb 17 23:59:54 2014
