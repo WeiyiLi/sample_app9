@@ -3963,3 +3963,525 @@ Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-04-04 22:31:35 -0500
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-04 22:31:35 -0500
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime, "password_digest" varchar(255), "remember_token" varchar(255)) [0m
+  [1m[35m (2.1ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (1.5ms)[0m  [1mCREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
+  [1m[35m (1.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (1.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140331021611')[0m
+  [1m[35m (1.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140302005514')
+  [1m[36m (1.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140302214359')[0m
+  [1m[35m (1.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140302220817')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:43:59 UTC +00:00], ["email", "example@railstutorial.org"], ["name", "Example User"], ["password_digest", "$2a$10$bGOjaEe6AfXgrBqjM1hDxeY3AWjYuvpa97jk7UNVXCj.SYqxTlTlK"], ["remember_token", "1577ed7bf332b7c57089f58536644f9caa6b6a3b"], ["updated_at", Thu, 17 Apr 2014 20:43:59 UTC +00:00]]
+  [1m[35m (6.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-1@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00], ["email", "example-1@railstutorial.org"], ["name", "Terrell Gleichner"], ["password_digest", "$2a$10$gE9KYrOLhtDJJRJ3n/VMluGYPCwOVXhRQ/LOXr59bX1Gjiuifb2oW"], ["remember_token", "aa9535af816b285deb92294b435deee92f29b098"], ["updated_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00]]
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-2@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00], ["email", "example-2@railstutorial.org"], ["name", "Mr. Monserrat Murray"], ["password_digest", "$2a$10$cNIqxURRrVbNFRl0kRE8uePsfyGe8fN0wi78cR1mn71ODj0aorvia"], ["remember_token", "b319350211a0f8c56e0834bd41153b382e28918a"], ["updated_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-3@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00], ["email", "example-3@railstutorial.org"], ["name", "Caleigh Romaguera"], ["password_digest", "$2a$10$6pmrQt.fNXbEVTNkKnsL1e5y4D1VO9TdF8rn8OgsaMXMIkS.iJ39O"], ["remember_token", "46948f4b26274dd209b2ef7e02a3cbea08440308"], ["updated_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00]]
+  [1m[35m (2.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-4@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00], ["email", "example-4@railstutorial.org"], ["name", "Ellie Kemmer II"], ["password_digest", "$2a$10$iCs/K2B7iccqJjUrFFrXyujgnPhMZU4ybd50wioD.2A7QDazAndmi"], ["remember_token", "6c0a36b970611a558c89c55a3705fc947cd6ef81"], ["updated_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-5@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00], ["email", "example-5@railstutorial.org"], ["name", "Germaine Little"], ["password_digest", "$2a$10$/KRnXEsQLgfYJEBaaLMhDed4IoF.9z0BaPKE5uPP/dtrK6Z/RZfLC"], ["remember_token", "d28775c31a4d7fc251f47eff959b6ed4613c2782"], ["updated_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00]]
+  [1m[35m (2.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-6@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00], ["email", "example-6@railstutorial.org"], ["name", "Amina Terry MD"], ["password_digest", "$2a$10$n6Bnit0h2CrEFV7rwAn6FO3B.e043K3hVqn2BxWak/TqUNpQVDky6"], ["remember_token", "851f2beec4ab7f91ae735743dd7c741ccbbe0a8f"], ["updated_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-7@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00], ["email", "example-7@railstutorial.org"], ["name", "Dr. Alford Gottlieb"], ["password_digest", "$2a$10$rRVtSJsfIqCltzWtTVUKYO9UpRCHIU1sIuTaUW/YIyEX5y6Q/bRcq"], ["remember_token", "1c4c7425bdc60c4a9ef9bfa309774a2932908e88"], ["updated_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-8@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00], ["email", "example-8@railstutorial.org"], ["name", "Miss Molly Rempel"], ["password_digest", "$2a$10$VP65DD9mCN37BTxXC7ih/OuRlD7L6zwlIa9SIsD6IErsDsGOYcMAu"], ["remember_token", "d2302b277464ba993071397f63ac20f793eb1d50"], ["updated_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-9@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00], ["email", "example-9@railstutorial.org"], ["name", "Matteo Douglas"], ["password_digest", "$2a$10$Rkf3JZzeA4hrsUzavEQeNu7NVD3wDOBQ.DxbMG4SFTcW64HGO83Iq"], ["remember_token", "c49c2e568f955abb596d17e4447e917c679c9594"], ["updated_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-10@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00], ["email", "example-10@railstutorial.org"], ["name", "Angus Bergstrom"], ["password_digest", "$2a$10$p3U.4VF0mggSk/oyee.BcO5v7GlcCT2s1X7KroVQgZmPOlgOShFJW"], ["remember_token", "cfd4b377dbba447aa0de55289c55a228cfac4658"], ["updated_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00]]
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-11@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00], ["email", "example-11@railstutorial.org"], ["name", "Jade O'Conner"], ["password_digest", "$2a$10$BIvEGyNRXVrugkfW78a9neMBamVgI78F2d3bYDapb9eSsgPIY7YfS"], ["remember_token", "297cb15a0a080186b49e059b05362f6d7d6a5c54"], ["updated_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-12@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00], ["email", "example-12@railstutorial.org"], ["name", "Jenifer Bauch"], ["password_digest", "$2a$10$PGaDbpgLD6MmJ.48dhUbP.KUqTC0auztpxPeAtrIBPPGeAOeNPgpi"], ["remember_token", "165df49a71682bb9c28ce3a7c9a8f662f64d8e55"], ["updated_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-13@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00], ["email", "example-13@railstutorial.org"], ["name", "Kelli Wiza"], ["password_digest", "$2a$10$snTNq38sZ9CwzAUucVSGVOquG0mDOqhk3YYqfbjD2NoFr3lliop/G"], ["remember_token", "0f5837a6af27c787c56c1309874b4f186c2894af"], ["updated_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-14@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00], ["email", "example-14@railstutorial.org"], ["name", "Joel Gulgowski"], ["password_digest", "$2a$10$5dP89/HVhZ/edUyWX6RxleayD873uUSHjLe.W8UGS35dIsKgN55N2"], ["remember_token", "a96aacb74a7eec25d2900083ded5df01efa26549"], ["updated_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-15@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00], ["email", "example-15@railstutorial.org"], ["name", "Sonny Dach Sr."], ["password_digest", "$2a$10$ciAybDRlwru.t.0MKx2WdOw137Ok0I33zGYI8csf98DXhFoUP7IjO"], ["remember_token", "68c7c510a32aa7270050cd7eec0d8c9b72f46a0d"], ["updated_at", Thu, 17 Apr 2014 20:44:00 UTC +00:00]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-16@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00], ["email", "example-16@railstutorial.org"], ["name", "Isidro Schroeder"], ["password_digest", "$2a$10$zdFRNswnJ3PXenrb2a3eDOS.FjNqpa8LXenmv669e9wlUQ9tU/Igi"], ["remember_token", "eccaccf4f67d5a330f1e8d40ae651b70f674176a"], ["updated_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-17@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00], ["email", "example-17@railstutorial.org"], ["name", "Merlin Bahringer"], ["password_digest", "$2a$10$/HCcqkCf7IH7H18Zr/C2HO0/HTknLKlC7AAJ70lasaYzzdiDRP3Zq"], ["remember_token", "3445c8e0a3642ba2302c0a3e7bf44bc70a7096ee"], ["updated_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-18@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00], ["email", "example-18@railstutorial.org"], ["name", "Dr. Heaven Smith"], ["password_digest", "$2a$10$IkxYXQ9K33Nnfpu2WcUse.WFy98PNZBqPlEv2rl0FhXTrO81V.oPa"], ["remember_token", "c89f573d1883fdf0aa727afbc3ddb848bca51bac"], ["updated_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00]]
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-19@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00], ["email", "example-19@railstutorial.org"], ["name", "Mr. Providenci Veum"], ["password_digest", "$2a$10$tzpA4Y48oWWArPjNdV84MeicN39iH2dUVo8udiWhMCcUWGEthmBMm"], ["remember_token", "ae4a6e84b763c6b833e4c2cc9a369a60299040b4"], ["updated_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00]]
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-20@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00], ["email", "example-20@railstutorial.org"], ["name", "Damien Renner"], ["password_digest", "$2a$10$feaPF155n1workfpCIFsq.wimxWGvFBrKDmqL3gnaZ0S1HnQXMDPS"], ["remember_token", "f86999cfa366da5091cc93edb88c2a30c2712daa"], ["updated_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-21@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00], ["email", "example-21@railstutorial.org"], ["name", "Jena Heathcote Sr."], ["password_digest", "$2a$10$CKEWcz7gJlhxMorwxNs4hOznOEfWhctCYpfib1B01NP.KXTFNw1Iq"], ["remember_token", "26a5df8a418bc218c8f922c1fafd253be1dc769f"], ["updated_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-22@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00], ["email", "example-22@railstutorial.org"], ["name", "Kale Prosacco PhD"], ["password_digest", "$2a$10$NSWc81N1xVrlHUQ0XxlDIu7OhUVGXmQejZ6ZoIVYsfTNmsRxQfPF."], ["remember_token", "dd56c47cf01272d46f06790b09569b2e05ac590b"], ["updated_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00]]
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-23@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00], ["email", "example-23@railstutorial.org"], ["name", "Mr. Grady Beier"], ["password_digest", "$2a$10$YL9agv0utbu/f5Nmn33Gq.OlabejyDU.gu3maMTEuuVuYXnGqYeUO"], ["remember_token", "201bf1914a8dd941231fb4837d3363f3f5fa5ba6"], ["updated_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-24@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00], ["email", "example-24@railstutorial.org"], ["name", "Noel Hahn"], ["password_digest", "$2a$10$6Q4Hb1jSmv825ZIbxspQw.5RnTqAx2VruyJ9AYEEZ8CjJlT2Ze/tm"], ["remember_token", "d21aae67b6c33915a36d7fb7b4b6cd9a4f6bffb2"], ["updated_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-25@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00], ["email", "example-25@railstutorial.org"], ["name", "Johnson Watsica"], ["password_digest", "$2a$10$aP0TZwu65cUhzJmj8jZv7ewOYEeO52.Nzblw6C3ypomcNJnH4ZCHW"], ["remember_token", "480fb9333dcf319963effe2397dda8b14f180147"], ["updated_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-26@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00], ["email", "example-26@railstutorial.org"], ["name", "Erich Lakin"], ["password_digest", "$2a$10$z/5GYP3L34cJcbLO1q5haujB39fOz9wvj.3AFOgpy5i5WjY6YNQy6"], ["remember_token", "786e3d4bc1db14623b74001cc532a07308a2c390"], ["updated_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00]]
+  [1m[35m (2.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-27@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00], ["email", "example-27@railstutorial.org"], ["name", "Jewel Marquardt"], ["password_digest", "$2a$10$MUUolL7HBjC2Ojs08Xe/uuAEm9WuDTiQGWGM9LJCui3UN5UbWPPGS"], ["remember_token", "0b234a54c766c632b66c301fc0b853382e09a8c2"], ["updated_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00]]
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-28@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00], ["email", "example-28@railstutorial.org"], ["name", "Mr. Antwon Von"], ["password_digest", "$2a$10$1.Slwgew.n6oqrrjoGYDdeOIaHPcDUAPV8Fb8zMVEBQBlxwyusJ4e"], ["remember_token", "864cc1f3c8520bb48e2f6bf34a705727426f2519"], ["updated_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-29@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00], ["email", "example-29@railstutorial.org"], ["name", "Sanford Ward DVM"], ["password_digest", "$2a$10$0VZoKUs1Is3sh/yt1DaOFu9K67PNnyyU9mN2fQClqeRXD6n7Wrs0e"], ["remember_token", "aef31dab2023340eb1925d4c0a0eddffbed688e4"], ["updated_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-30@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00], ["email", "example-30@railstutorial.org"], ["name", "Reynold Paucek"], ["password_digest", "$2a$10$.8acsFbkgz08c/gVM5Y3eOXYd81z18uTomLbpj.xMhYaa7avOvI66"], ["remember_token", "e4d62d466d9599a9606b6a276186e67a8af6794f"], ["updated_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-31@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00], ["email", "example-31@railstutorial.org"], ["name", "Dr. Mafalda Nikolaus"], ["password_digest", "$2a$10$UfDA4T3CLN3kApfMa3wP5OFPvQCOXcrN8gaSOEZ934Idf0FNvY6Lm"], ["remember_token", "f49880e722297aa0a4bcf4143aeb2e3fd61204e1"], ["updated_at", Thu, 17 Apr 2014 20:44:01 UTC +00:00]]
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-32@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00], ["email", "example-32@railstutorial.org"], ["name", "Dr. Macie Rowe"], ["password_digest", "$2a$10$yRVp5Bkdq.Y39ieaJG3sPuMt9cHcc6X5WgEdxxfIxAPAwnzRnaUhK"], ["remember_token", "16e5e5299d665da24bf7ae0c0568692d5f3dd64c"], ["updated_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-33@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00], ["email", "example-33@railstutorial.org"], ["name", "Syble Wehner"], ["password_digest", "$2a$10$w5d1jtn/a/o7Y/9LYfhhAOTyE17x/2N5lGpLeLFr3OUNVrxkgAwR2"], ["remember_token", "fc4b9bbb50c3a1f62327f9994707bfb6d21cd5f9"], ["updated_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-34@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00], ["email", "example-34@railstutorial.org"], ["name", "Arno Zulauf"], ["password_digest", "$2a$10$vnrbL4ZPAt5Kww9BAUxtFO.7J3M55uPrHrc4TWpynp71.QL9Cj6JG"], ["remember_token", "9604ca34bccb153a3485e2870bddb29ffe650134"], ["updated_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00]]
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-35@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00], ["email", "example-35@railstutorial.org"], ["name", "Oleta Gorczany"], ["password_digest", "$2a$10$c6bVefK4EIfLRopN.YA.SO1h6CZDKmRAU7kpHozvMwy3MX3Qlxbzy"], ["remember_token", "d74339b8690d9785607f03a5b528380f14e8e3ee"], ["updated_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-36@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00], ["email", "example-36@railstutorial.org"], ["name", "Brandy Friesen"], ["password_digest", "$2a$10$thYSin7VSeZ.NMX1ZtzIk.jWdSGvzla2YlIH3hlR14zl0xIegUF56"], ["remember_token", "fefffed262a4e0f3ba028b857e0d3fa027cace8b"], ["updated_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-37@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00], ["email", "example-37@railstutorial.org"], ["name", "Tre Batz"], ["password_digest", "$2a$10$SrjicR9nIIrYtDCfJbc17OrXqKtyvHC0F6qTzDbS6a6TTjWrAq19m"], ["remember_token", "0fdcba299ec675d9867e1b93ddd6877baa1aae36"], ["updated_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-38@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00], ["email", "example-38@railstutorial.org"], ["name", "Colin Anderson"], ["password_digest", "$2a$10$oWtC2DVEqHN7TYCI1LU7Zudj0mx8PdvtqWKj5oMg4ilChgDzwvGIi"], ["remember_token", "a01490bfe6d5da82f46aa2a4ef19c63bb483c35c"], ["updated_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-39@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00], ["email", "example-39@railstutorial.org"], ["name", "Torrey Schneider"], ["password_digest", "$2a$10$VylM7RIxenJ2DnHxk3AyTOhVvkFWSKL90fDNakTDCAUcU.zgIdyK."], ["remember_token", "1559120b00661699aab8e9a3bb509ffdef21c4d0"], ["updated_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-40@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00], ["email", "example-40@railstutorial.org"], ["name", "Raheem Vandervort"], ["password_digest", "$2a$10$DHXskazDjl66eVYeoNPKJe4c0f3o9ng6U6g98IbQLgl8KcZ9dHU9G"], ["remember_token", "bc3fb4bb652277006f54e86d79b39b1fffad249e"], ["updated_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-41@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00], ["email", "example-41@railstutorial.org"], ["name", "Kennith Hickle"], ["password_digest", "$2a$10$CF.Ut22YuOSzEWSRmyRiQOHbVKgJ93XnnV5S3IH2egvNXX0Z27atK"], ["remember_token", "19d52bd8677c32ca99e0b13ce35c842030690737"], ["updated_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-42@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00], ["email", "example-42@railstutorial.org"], ["name", "Edwardo O'Conner"], ["password_digest", "$2a$10$MTDPbKlLWnv7OjclzJfaPOpfrDg8/EdoEtgf7hL3DJTCgVfaURF56"], ["remember_token", "a05c82130229ed01994effba732acf57fdbb1d89"], ["updated_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-43@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00], ["email", "example-43@railstutorial.org"], ["name", "Zola Buckridge"], ["password_digest", "$2a$10$iHR0sUpH2gQC4kk4yrdy6ufko6wkmE6EDvdfSdh6TRV7ziMMG6PuG"], ["remember_token", "05c4b7666d34b4a7c122fe2de0e6885fa19739f3"], ["updated_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-44@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00], ["email", "example-44@railstutorial.org"], ["name", "Nicholas Schowalter"], ["password_digest", "$2a$10$WmwAIFUF4qlC9rUHi2D..OlHMp.ZKeXhEIScYI0x.FlnP8pgExKru"], ["remember_token", "b2850b98a61aff3e534f650aaaf3c090a770e9c5"], ["updated_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-45@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00], ["email", "example-45@railstutorial.org"], ["name", "Raegan Becker"], ["password_digest", "$2a$10$M0ZYrTa/sInmZrgxoPyEJuzdc4fQ8c3eFAefI/sV13bEOJsyQQiva"], ["remember_token", "3da06b56c4f2db832bce0dc8cdea67c83c471c47"], ["updated_at", Thu, 17 Apr 2014 20:44:02 UTC +00:00]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-46@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00], ["email", "example-46@railstutorial.org"], ["name", "Miss Jude Lubowitz"], ["password_digest", "$2a$10$1WCB8CUJANwkCcUcSy17Q.8p60xLApXIFsO6UR3jxWmNREmxfWnSK"], ["remember_token", "edeffc71e9c2d74bfe219da3b1c12f3cec305908"], ["updated_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-47@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00], ["email", "example-47@railstutorial.org"], ["name", "Myrtice Will"], ["password_digest", "$2a$10$jaSuhU72TGEnsPgF0szv6.1sknwxRQ5O34fP40ecD.wiv4XXJ0mSm"], ["remember_token", "015b7779b3e25cc982b01ff0835679a2bcdf9998"], ["updated_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00]]
+  [1m[35m (2.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-48@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00], ["email", "example-48@railstutorial.org"], ["name", "Fae Halvorson"], ["password_digest", "$2a$10$.xHIhxGKhBqM6mwQj6UT2O.OutYh2V.NANTUxZAbEwaSqGYASe4M6"], ["remember_token", "ddc9933de4b94d0ef9d5ecdbeeb69a7e59ac2803"], ["updated_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-49@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00], ["email", "example-49@railstutorial.org"], ["name", "Thelma Kiehn Sr."], ["password_digest", "$2a$10$ahypjCX6SMVfbkJEmDjqvO54q81uNc5LF0x9wbm3utqOi.H.cYIYm"], ["remember_token", "01d11fa1af721d1d76199f2bfeba78ae9c383188"], ["updated_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00]]
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-50@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00], ["email", "example-50@railstutorial.org"], ["name", "Scottie Jacobs"], ["password_digest", "$2a$10$KIbhArpy.DNEZM/xxZyiy.gNnBOLzW6HdrpTenk1nRTB28o4rNxJO"], ["remember_token", "fdb85a6e939ece652506deaa961b166c20fbf841"], ["updated_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-51@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00], ["email", "example-51@railstutorial.org"], ["name", "Hardy Bayer"], ["password_digest", "$2a$10$IabdL01WW3d6U7mYgCPcP.0P2zFHwJVe/VDTY.rb1RWlDLBNqT9va"], ["remember_token", "375719b41f64c4f6d194264a054d9642093e95fe"], ["updated_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-52@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00], ["email", "example-52@railstutorial.org"], ["name", "Rodrick Russel DVM"], ["password_digest", "$2a$10$QIg9LV9XrTOOhvSxMdy4zu.nIbRfmvI7k7fDYbdjPlQ9Y0jNgdkJy"], ["remember_token", "8a8c6071d185cf35fbe57dba34dafc99b0499d92"], ["updated_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00]]
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-53@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00], ["email", "example-53@railstutorial.org"], ["name", "Juanita Halvorson"], ["password_digest", "$2a$10$gtMVfEGHIId27BzLrJtUR.ImzGfLWAI76bkrS2FUacGiM62SyVfYe"], ["remember_token", "afaf80489e23764ac873f7639ac0eaf0f563b7a6"], ["updated_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-54@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00], ["email", "example-54@railstutorial.org"], ["name", "Katrine Stokes I"], ["password_digest", "$2a$10$/IzSxTqEBBLsnM8EIU6yEeh8IHjrDHM8a.dlkZC1wKJcWhzbjHgwe"], ["remember_token", "079a765b639cf74f92c320b1593f3a9bbcdb2e0c"], ["updated_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-55@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00], ["email", "example-55@railstutorial.org"], ["name", "Bradford O'Connell"], ["password_digest", "$2a$10$784mpiJ3iUIqhoSjYRe.A..l8/M45p3us3WuGcafd7.w1fFw0tgcm"], ["remember_token", "b2be99e86a7e41d263374b5157d19d97a38d8714"], ["updated_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-56@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00], ["email", "example-56@railstutorial.org"], ["name", "Liliana Fadel DVM"], ["password_digest", "$2a$10$XbTk1PnBnwd7bdz.hixVP.mz7ONnXqhGeMV4tfhBw4SMPWrBFLlie"], ["remember_token", "ce243f34e9b9f99725577a4095c8b617544074da"], ["updated_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-57@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00], ["email", "example-57@railstutorial.org"], ["name", "Mr. Linwood O'Connell"], ["password_digest", "$2a$10$INrUamCzEoGdNVTwpcmX2upL/WYUsM.XyIRUu9j8ueDVjX7nbuUii"], ["remember_token", "675cc3fd477a5cecdabc3aa04c03d4b1897f9b03"], ["updated_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00]]
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-58@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00], ["email", "example-58@railstutorial.org"], ["name", "Ron Kertzmann"], ["password_digest", "$2a$10$2QgLtrP6IHTqRJ1Cuw881.eQrbjVybo4edPfSVRcUY7dFUge70DkW"], ["remember_token", "b725e1768483b978b8b7648bded1895565e7071b"], ["updated_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-59@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00], ["email", "example-59@railstutorial.org"], ["name", "Hazel Gislason III"], ["password_digest", "$2a$10$jt79EJoOjRv4dNMBwUpUSOFUdjx0f4gqqa.eaKo3K3mxk5Hy5ES32"], ["remember_token", "851bbc019b4e992b894a7360f6f0f4f1a01afe38"], ["updated_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-60@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00], ["email", "example-60@railstutorial.org"], ["name", "Andrew Bernhard"], ["password_digest", "$2a$10$fZxM5JAIkbIPAiYrcSRUi.fMPU9SKHt3YuGB/YM0GNgw6pY2q8ODi"], ["remember_token", "fbdf031d4654dde7bf7cc2276f30575e9ccd24b7"], ["updated_at", Thu, 17 Apr 2014 20:44:03 UTC +00:00]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-61@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00], ["email", "example-61@railstutorial.org"], ["name", "Margarette Okuneva"], ["password_digest", "$2a$10$19V6Jvm/ZhxKRulODlni5uX9R1GRe5dFhsEeO7MFPDHyXmNSGnRHO"], ["remember_token", "cf702d6f56b587d7401a8e1d2498a27007738a23"], ["updated_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-62@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00], ["email", "example-62@railstutorial.org"], ["name", "Ardith Hauck IV"], ["password_digest", "$2a$10$2eqrmqczr/h/OhNBrxAv0.5nqtWAofuwilDZ0K./fU91IbATeDvey"], ["remember_token", "22d4128b4f72dfc87b87c5cb69dc308e3e534163"], ["updated_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-63@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00], ["email", "example-63@railstutorial.org"], ["name", "Judy Harris"], ["password_digest", "$2a$10$teEpzdHrId0jRdQW6057UOJghdMueQn.o5edLWsHk2DOCLDMQkWfa"], ["remember_token", "e8fcf1b502f693d8b80a9f41be88b56186b49ee7"], ["updated_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-64@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00], ["email", "example-64@railstutorial.org"], ["name", "Aletha Kiehn"], ["password_digest", "$2a$10$GrlNnEM.DqAa73KYKt7vheSRNtR3I8e0NylmsbgRQzu1dV5/PLAC."], ["remember_token", "ec74681c733307421c5eaa45a1b149ac908d8144"], ["updated_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-65@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00], ["email", "example-65@railstutorial.org"], ["name", "Forrest Maggio"], ["password_digest", "$2a$10$4XcH9mqrdGu8s99raUNe5.7z49nQLQVNjlgC4SFLqw8dUdkmgE40O"], ["remember_token", "056a537b4d147ba421aad2ce3e28e291f0419765"], ["updated_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-66@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00], ["email", "example-66@railstutorial.org"], ["name", "Colt Armstrong V"], ["password_digest", "$2a$10$vsH3I6Ccf5hyzAEjHWGAouTKpuJ/F1J8wQxNY8FMOKObePf9CszCu"], ["remember_token", "84d901a3577705ff9fe29bbf2a66d0ec2f0d790b"], ["updated_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-67@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00], ["email", "example-67@railstutorial.org"], ["name", "Don Rodriguez"], ["password_digest", "$2a$10$gQb4E56jJ/cthnxHmxNDCe88DMGBYtfiv7oWXuff71Hp3tUQF6GoG"], ["remember_token", "f27656185984ebd12824b08038630dd1a82d7cd9"], ["updated_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-68@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00], ["email", "example-68@railstutorial.org"], ["name", "Brendan Parisian"], ["password_digest", "$2a$10$na5FiHzaq8ylcAPZ2CFp3O/5Pe/qRXaS4wpB.onrwONIFh5s1F.l."], ["remember_token", "25b8fca4799b383e425b58d8af9f2ea04d11feeb"], ["updated_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-69@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00], ["email", "example-69@railstutorial.org"], ["name", "Fidel McClure"], ["password_digest", "$2a$10$GVi4C2oJfhWwQjZGXnLNquk9TVo.I1fWN7N3X/LA8oFOqAr2g9ojW"], ["remember_token", "7deb9071bc3ed9e893ea2fde1bd5f1fe2c9c4728"], ["updated_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-70@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00], ["email", "example-70@railstutorial.org"], ["name", "Aimee Weber"], ["password_digest", "$2a$10$SBghQKHcz3mb6vMtodx.iefRfhyWhuyZiGGnwiPuQi6hiBBT9Ropy"], ["remember_token", "7e542e3edcf72a06627c0862c7f4aba2c22b2006"], ["updated_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-71@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00], ["email", "example-71@railstutorial.org"], ["name", "Mrs. Watson West"], ["password_digest", "$2a$10$NDv6Y1/W7a4EZG20nbMUa.x0YqJ7sOb1MoD0lFgx1kqjDxlIaHrqu"], ["remember_token", "fb841e7998fde70373792757b333998665731c1d"], ["updated_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-72@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00], ["email", "example-72@railstutorial.org"], ["name", "Chelsie Pfeffer"], ["password_digest", "$2a$10$Tcc.D570AYP7ww04v3daD.RVGkPpfzaoIpa.7gW55E5Inl9g4pRKe"], ["remember_token", "7143f527761e59e5be7a5ccb3a70b218800dbe88"], ["updated_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-73@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00], ["email", "example-73@railstutorial.org"], ["name", "Christina Homenick"], ["password_digest", "$2a$10$82TZgfZMVLEwWUlHYNRCUuKkxXT4N7k.5QUAa/obRcuF/k3ILCXXS"], ["remember_token", "9c07fe01daebf9f933e17fc36e1dcf2ab644468c"], ["updated_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00]]
+  [1m[35m (2.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-74@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00], ["email", "example-74@railstutorial.org"], ["name", "Ethan McLaughlin"], ["password_digest", "$2a$10$TAT6uq0mIduXD6g8ahefJOYeNMQ65sYmV3.TTSyW2hCxwHyFURHBW"], ["remember_token", "feff52af9ca30d7dffef69f95a9db6c86232d622"], ["updated_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-75@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00], ["email", "example-75@railstutorial.org"], ["name", "Timmy Corwin"], ["password_digest", "$2a$10$CWG2eRWda0MqybP3Rlw5lunf9IADF0rpOO0lY.5EHRqWgBlbQQgaq"], ["remember_token", "54bb05ec8e1af8f3c6477f57e5194de9eebbd7b0"], ["updated_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-76@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00], ["email", "example-76@railstutorial.org"], ["name", "Omer Witting I"], ["password_digest", "$2a$10$GLYtcyJoiEi5yue5E3bnp.5y76AYkMJDLvZU5Lo3XJ4e6Z/ciZG7K"], ["remember_token", "edf6d6003c5d4b8afd8d6f56579f7d7353d390ec"], ["updated_at", Thu, 17 Apr 2014 20:44:04 UTC +00:00]]
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-77@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00], ["email", "example-77@railstutorial.org"], ["name", "Gladyce Jakubowski"], ["password_digest", "$2a$10$Yl/hbjMvTT6lcitPk6yno.VUksFT4.SuXbt7FWBP0EOh6kjjWu7pO"], ["remember_token", "eafafe1af7d72c3c6dc3954c64ac4996ff58331c"], ["updated_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00]]
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-78@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00], ["email", "example-78@railstutorial.org"], ["name", "Estella Kozey"], ["password_digest", "$2a$10$eYzfmEd6zD4D66RVw2Oynem.Ml/6N0LfJdfGaxajmkT/.WtND2jCi"], ["remember_token", "702a5be710c96ca527d4575c02e11cc875d7c001"], ["updated_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-79@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00], ["email", "example-79@railstutorial.org"], ["name", "Margot Effertz"], ["password_digest", "$2a$10$bkbO35Gb8uj7gGW1/eKr2uyt7CqnDFsANUduCZkpP/99qlENrWcv6"], ["remember_token", "94be08cb775d796e585c67532e3d238742040401"], ["updated_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-80@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00], ["email", "example-80@railstutorial.org"], ["name", "August McKenzie"], ["password_digest", "$2a$10$DrzPofMw6Pi07TsJY0v3Be/3ohHAjrV28MNLPpcvB8UnnqILbcPPu"], ["remember_token", "7a191f401c89c096c11170e2959562d2dee0cf12"], ["updated_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-81@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00], ["email", "example-81@railstutorial.org"], ["name", "Mrs. Vito Zulauf"], ["password_digest", "$2a$10$slvXaH348X2c.8BPPw1kx.akZyz5Au1l/1EqSqtNdIuUocvAjJviy"], ["remember_token", "8b30d1cecbd435719bb59aea64e5623402426dce"], ["updated_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-82@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00], ["email", "example-82@railstutorial.org"], ["name", "Dr. Reagan Terry"], ["password_digest", "$2a$10$pNM3ZaZ6IC8g6mdF86BFD.Yl1Cz1Obf8QwpBOahI3YHvDoIGi1H7G"], ["remember_token", "9df6b871414c6b0bbce78322cd021c3e7609e35d"], ["updated_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-83@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00], ["email", "example-83@railstutorial.org"], ["name", "Aurore Quitzon"], ["password_digest", "$2a$10$06M7Tp6gI9DRD8eIdoXZnuqVhYNnWckA90.VNg4FR9Om50BQDGfVW"], ["remember_token", "788aca1477abec537cc828e7dca39f9a654a085f"], ["updated_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-84@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00], ["email", "example-84@railstutorial.org"], ["name", "Chaim Runolfsdottir"], ["password_digest", "$2a$10$QKn0LedqKrjjS40RFx7J/.3fWBsW7I7m3tKeK62kIooRJz6YEvv4u"], ["remember_token", "072310e048b4ccd6156efadb9395c7ea47eb5d1e"], ["updated_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-85@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00], ["email", "example-85@railstutorial.org"], ["name", "Ofelia Dickinson II"], ["password_digest", "$2a$10$/NoZ6aj3qEBmkplgivWAFeHkZj1MYmwl3FgSmVNbaFL6iR197lyJK"], ["remember_token", "6812ec5b8334fcbd92c23f077f6051118b5660b2"], ["updated_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-86@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00], ["email", "example-86@railstutorial.org"], ["name", "Dorothea DuBuque"], ["password_digest", "$2a$10$TsBCE1dbCgGVuzhsq4wIKO75A8yeeV2UKXHeydRgcBsa0n5Clk.G."], ["remember_token", "fc36282a65a5ed72737e3c0dc6f79aaab64ea6b4"], ["updated_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-87@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00], ["email", "example-87@railstutorial.org"], ["name", "Mrs. Flossie Mitchell"], ["password_digest", "$2a$10$YzPIe8Yu.3HcJHqAxzKM0ukj74hnUlmB56MufGTigMvnlklcBOVqO"], ["remember_token", "34f0184ecf07b5092a4b85542581e53ac63118ec"], ["updated_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-88@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00], ["email", "example-88@railstutorial.org"], ["name", "Avis Boehm"], ["password_digest", "$2a$10$tonmdUanzwshh0j5yjyQ/Oe0HWqAulHZ9IJXJvefyncDYFfPh/0iG"], ["remember_token", "825746b0a1d6d04dbb53673117894951a6a7c3f3"], ["updated_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00]]
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-89@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00], ["email", "example-89@railstutorial.org"], ["name", "Mr. Everardo Wiegand"], ["password_digest", "$2a$10$c3BViLI2eyJnYCdsjVB32.fCP8kquyAbP5SFIfRNmX4veAJsn6/ke"], ["remember_token", "d8cec445abaf64203e691876c6cadb86d58a6126"], ["updated_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-90@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00], ["email", "example-90@railstutorial.org"], ["name", "Waylon Hayes Jr."], ["password_digest", "$2a$10$mMVnoKLLV0t1JzIb4LGrE.Kt2wT0sjaIdfEl2.fYVaiLP87iidFCO"], ["remember_token", "9fd1872ffffebfaafe3e697670466d4d802597de"], ["updated_at", Thu, 17 Apr 2014 20:44:05 UTC +00:00]]
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-91@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:06 UTC +00:00], ["email", "example-91@railstutorial.org"], ["name", "Carmelo Labadie PhD"], ["password_digest", "$2a$10$lFmQPDPYR3sG1wZ.h.RR8.NCkhjx/1tmhbNZdiZ774bUiBXfZy4sK"], ["remember_token", "8477c816abca3b592d0337e2e42ffb3342823750"], ["updated_at", Thu, 17 Apr 2014 20:44:06 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-92@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:06 UTC +00:00], ["email", "example-92@railstutorial.org"], ["name", "Lauryn Parker"], ["password_digest", "$2a$10$oVe7.BTH4qjvSt9da1akQe3EfA2vK4ReWRrf2fZ8GJVi4oRDdwzfW"], ["remember_token", "6e6998491f4bcbd90bfd8e76b7c78a9e9f56ed7d"], ["updated_at", Thu, 17 Apr 2014 20:44:06 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-93@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:06 UTC +00:00], ["email", "example-93@railstutorial.org"], ["name", "Dana Waters"], ["password_digest", "$2a$10$ehtalAZq.bNpbYe53MZwpOBadH3BN19lFHFlb12kpmpYhS7enb9Dm"], ["remember_token", "d8a68b3c0bc0ecc1b315b5347ade8d9586b7120d"], ["updated_at", Thu, 17 Apr 2014 20:44:06 UTC +00:00]]
+  [1m[35m (3.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-94@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:06 UTC +00:00], ["email", "example-94@railstutorial.org"], ["name", "Tyra Ratke"], ["password_digest", "$2a$10$H2Kj.er1jFGU0pVmr2eYq.DkH7BQQYkW8NAE99Jbaxf1PK.T20tnK"], ["remember_token", "2168c20e13f4e552625710c5e26904f02779751f"], ["updated_at", Thu, 17 Apr 2014 20:44:06 UTC +00:00]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-95@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:06 UTC +00:00], ["email", "example-95@railstutorial.org"], ["name", "Annetta Murray"], ["password_digest", "$2a$10$q.wyDavU6KwE7YkAjbFZfegWw1gcIvOX3X/J0IIjAb4JhowN57FOK"], ["remember_token", "2eb9e930be952e66e9fbf8711a7a3cbfc5f254ce"], ["updated_at", Thu, 17 Apr 2014 20:44:06 UTC +00:00]]
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-96@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:06 UTC +00:00], ["email", "example-96@railstutorial.org"], ["name", "Kennith Huel"], ["password_digest", "$2a$10$dXt3p5z.ijw1hxA2x2msBuT//PClg5c1BlWgefctAL.wZM0SAIa6u"], ["remember_token", "457a6465ea4a0ecf1ed5b18169e5e6bcc9ba8d42"], ["updated_at", Thu, 17 Apr 2014 20:44:06 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-97@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:06 UTC +00:00], ["email", "example-97@railstutorial.org"], ["name", "Elissa Gutkowski I"], ["password_digest", "$2a$10$bSQVsyxQdbVdGnWZHfRtrOkRuzQpSWv0Km6grkzqz2lPnDmI2ZPdW"], ["remember_token", "810efa5fa5bf48c1d38c0dcceb6b0f1e5676d753"], ["updated_at", Thu, 17 Apr 2014 20:44:06 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-98@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:06 UTC +00:00], ["email", "example-98@railstutorial.org"], ["name", "Sebastian Robel"], ["password_digest", "$2a$10$mD5dXpS7dqRY.hLHnuSlwu8.1L.sYS4QUFen87R59I129TdXxcAwq"], ["remember_token", "50f1227b36dca137386f5faa4ee898516ed905dd"], ["updated_at", Thu, 17 Apr 2014 20:44:06 UTC +00:00]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-99@railstutorial.org') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 17 Apr 2014 20:44:06 UTC +00:00], ["email", "example-99@railstutorial.org"], ["name", "Dee Gutmann"], ["password_digest", "$2a$10$CEZWbwr4pR2BVK0VC1ImyuWPY6Ed9jrm8VSO476PPW0l7Sesw03um"], ["remember_token", "3d5cedd76a63f2b6265beb1cb4287cd6da808b9f"], ["updated_at", Thu, 17 Apr 2014 20:44:06 UTC +00:00]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (6.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime, "password_digest" varchar(255), "remember_token" varchar(255)) [0m
+  [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (1.2ms)[0m  [1mCREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140331021611')[0m
+  [1m[35m (1.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140302005514')
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140302214359')[0m
+  [1m[35m (1.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140302220817')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
