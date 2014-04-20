@@ -74,6 +74,20 @@ describe "microposts" do
       it { should have_content(user.microposts.count) }
     end
 end
+describe "profile page visited by other users" do
+     let(:user) { FactoryGirl.create(:user) }
+     let(:another_user) { FactoryGirl.create(:user) }
+     let!(:m1) { FactoryGirl.create(:micropost, user: user, content: "Foo") }
+     
+     before do  
+       sign_in another_user
+       visit user_path(user)
+     end
+ 
+     it "should not show delete link" do
+       expect(page).not_to have_link('delete')
+     end
+   end
 
   describe "signup page" do   
     before { visit signup_path }
