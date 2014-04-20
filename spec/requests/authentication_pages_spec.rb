@@ -19,8 +19,7 @@ describe "signin" do
 
       it { should have_title('Sign in') }
      it { should have_selector('div.alert.alert-error') }
-#    it { should have_error_message('Invalid') }
-
+ 
     describe "after visiting another page" do
         before { click_link "Home" }
         it { should_not have_selector('div.alert.alert-error') }
@@ -31,13 +30,7 @@ end
 
     describe "with valid information" do
       let(:user) { FactoryGirl.create(:user) }
- #     before do
-  #      fill_in "Email",    with: user.email.upcase
-   #     fill_in "Password", with: user.password
-    #   click_button "Sign in"
-    #  end
-   
-    before { sign_in user }
+   before { sign_in user }
 
 
       it { should have_title(user.name) }
@@ -75,6 +68,21 @@ end
           end
         end
       end
+
+
+ describe "in the Microposts controller" do
+
+        describe "submitting to the create action" do
+          before { post microposts_path }
+          specify { expect(response).to redirect_to(signin_path) }
+        end
+
+        describe "submitting to the destroy action" do
+          before { delete micropost_path(FactoryGirl.create(:micropost)) }
+          specify { expect(response).to redirect_to(signin_path) }
+        end
+      end
+
 
       describe "in the Users controller" do
 
