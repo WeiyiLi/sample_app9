@@ -35,6 +35,13 @@ describe "for signed-in users" do
        it "should show the micropost count with proper pluralization" do
          expect(page).to have_content("micropost".pluralize(user.microposts.count))
        end
+
+it "should paginate microposts" do
+         30.times { FactoryGirl.create(:micropost, user: user, content: "Lorem ipsum") }
+         visit root_path
+         expect(page).to have_selector('div.pagination') 
+       end
+
       end
 
 
