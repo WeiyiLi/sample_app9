@@ -15,9 +15,7 @@ def show
     @microposts = @user.microposts.paginate(page: params[:page])
   end
 
-  def new
-  end
- 
+
   def new
      @user = User.new
   end
@@ -25,7 +23,6 @@ def show
 def create
     @user = User.new(user_params)    # Not the final implementation!
     if @user.save
-     # Handle a successful save.
     sign_in @user
     flash[:success] = "Welcome to the Sample App!"
      redirect_to @user
@@ -35,14 +32,9 @@ def create
   end
 
 def edit
-#    @user = User.find(params[:id])
   end
 
-
-
-
 def update
- #   @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
       redirect_to @user
