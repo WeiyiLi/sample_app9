@@ -211,4 +211,25 @@ describe "following" do
       its(:followed_users) { should_not include(other_user) }
     end
   end
+
+describe "destroying relationships" do
+    let(:other_user) { FactoryGirl.create(:user) }
+    let(:another_user) { FactoryGirl.create(:user) }
+    before do
+      @user.save
+      @user.follow!(other_user)
+      other_user.follow!(another_user)
+    end
+
+    it "should destroy associated followed users" do
+      @user.destroy
+      expect(other_user.followers).not_to include(@user)
+    end
+
+    it "should destroy associated followers" do
+      another_user.destroy
+      expect(other_user.followed_users).not_to include(another_user)
+    end
+
+  end
 end
